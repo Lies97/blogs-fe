@@ -5,9 +5,29 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* height: 100vh; */
+  position: relative;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.ui.card:first-child {
+  margin-top: 1rem !important;
+}
+
+.modal {
+  position: fixed;
+  top: unset !important;
+  left: unset !important;
+  height: auto !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* /* outline: 0; */
+}
+
+.ui.modal {
+  width: 500px !important;
 }

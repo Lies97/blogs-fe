@@ -1,0 +1,16 @@
+.header {
+  .logo {
+    width: 45%;
+    text-align: left;
+    img {
+      width: 150px;
+    }
+  }
+  .container {
+    justify-content: flex-start !important;
+  }
+}
+
+.color-light {
+  color: #fff !important;
+}
