@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'api/articles';
+const url = '/articles';
 
 export const fetchArticles = () => {
   return (dispatch) => {

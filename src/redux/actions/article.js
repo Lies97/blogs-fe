@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = '/api/article';
+const url = '/article';
 
 console.log(url);
 export const fetchArticle = (param) => {
@@ -9,7 +9,7 @@ export const fetchArticle = (param) => {
     return axios({
       method: 'get',
       // url: `https://news-crawler-backend.herokuapp.com/api/article/${param}`,
-      url: `${url}/${param}`,
+      url: `${url}?url=${param}`,
     })
       .then((payload) =>
         dispatch({ type: "FETCHING_ARTICLE_SUCCESS", payload: payload.data })

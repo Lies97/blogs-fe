@@ -2,23 +2,23 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function (app) {
   app.use(
-    createProxyMiddleware('/api/articles', {
-      target: 'http://news-crawler-backend.herokuapp.com',
+    createProxyMiddleware('/articles', {
+      target: 'http://us-central1-horizontal-cab-336803.cloudfunctions.net',
       secure: false,
       changeOrigin: true,
       pathRewrite: {
-        '^/api/old-path': '/api/articles', // rewrite path
+        '^/api/old-path': '/articles', // rewrite path
       }
     })
   );
 
   app.use(
-    createProxyMiddleware('/api/article', {
-      target: 'http://news-crawler-backend.herokuapp.com',
+    createProxyMiddleware('/article', {
+      target: 'http://us-central1-horizontal-cab-336803.cloudfunctions.net',
       secure: false,
       changeOrigin: true,
       pathRewrite: {
-        '^/api/old-path': '/api/article', // rewrite path
+        '^/api/old-path': '/article', // rewrite path
       }
     })
   );
