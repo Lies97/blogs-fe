@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const url =
-  'http://us-central1-horizontal-cab-336803.cloudfunctions.net/article';
+  'https://us-central1-horizontal-cab-336803.cloudfunctions.net/article';
 
 console.log(url);
 export const fetchArticle = (param) => {
