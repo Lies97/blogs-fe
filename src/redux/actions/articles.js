@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const url =
-  'https://cors-anywhere.herokuapp.com/https://us-central1-horizontal-cab-336803.cloudfunctions.net/articles';
+  'https://us-central1-horizontal-cab-336803.cloudfunctions.net/articles';
 
 export const fetchArticles = () => {
   return (dispatch) => {
