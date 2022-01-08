@@ -9,10 +9,10 @@ export const fetchArticles = () => {
     return axios({
       method: 'get',
       url,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-      },
+      // headers: {
+      //   'Access-Control-Allow-Origin': '*',
+      //   'Content-Type': 'application/json',
+      // },
     })
       .then((payload) =>
         dispatch({ type: 'FETCHING_ARTICLES_SUCCESS', payload: payload.data })
