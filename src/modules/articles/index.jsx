@@ -53,7 +53,7 @@ const Articles = () => {
 
   return (
     <div className="articles container">
-      <h2 className="mt-3">
+      <h2 className="mt-3 text-center">
         This App crawls Contents from{' '}
         <strong>
           <a href={url} target="_blank" rel="noreferrer">

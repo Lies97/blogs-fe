@@ -9,9 +9,22 @@ import Loading from './modules/loading';
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Modal } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
+  const [hidden, setHidden] = useState(true);
+
+  useEffect(() => {
+    window.onscroll = () => {
+      if (window.pageYOffset !== 0) {
+        setHidden(false);
+      } else {
+        setHidden(true);
+      }
+    };
+  }, []);
+
   const isLoading = useSelector((state) => state.articlesReducer.isLoading);
   const isLoadingDetail = useSelector(
     (state) => state.articleReducer.isLoading
@@ -30,6 +43,10 @@ function App() {
 
   const className = isLoading || isLoadingDetail ? 'App freezed' : 'App';
 
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className={className}>
       <Router>
@@ -38,6 +55,15 @@ function App() {
           <Route index element={<Articles />} />
           <Route path="/article/:url" element={<Article />} />
         </Routes>
+        <div className="position-sticky back-to-top-btn d-flex justify-content-center">
+          <button
+            className="btn btn-danger"
+            hidden={hidden}
+            onClick={handleClick}
+          >
+            <Icon name="arrow up" />
+          </button>
+        </div>
         <Footer />
         <Loading />
       </Router>

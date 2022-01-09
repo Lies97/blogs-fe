@@ -7,7 +7,7 @@ import './styles.scss';
 const Header = () => {
   return (
     <div className="header">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div className="container">
           <div className="logo">
             <Link to="/">

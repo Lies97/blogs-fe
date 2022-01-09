@@ -1,5 +1,8 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .App {
-  text-align: center;
   height: 100vh;
 }
 
@@ -53,4 +56,13 @@
 
 a.ui.card:hover {
   z-index: 0 !important
+}
+
+.back-to-top-btn {
+  right: 180px;
+  bottom: 60px;
+}
+
+.articles, .article {
+  padding-top: 100px;
 }
