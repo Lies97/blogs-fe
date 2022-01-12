@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './styles.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchArticles } from '../../redux/actions/articles';
-import Card from './components/Card.jsx';
+
+import CardItem from './components/CardItem';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import FirstArticle from './components/FirstArticle';
 
@@ -62,7 +63,7 @@ const Articles = () => {
       >
         {cloneArray.length > 0 &&
           cloneArray.map((article, i) => {
-            return <Card article={article} key={i} />;
+            return <CardItem article={article} key={i} />;
           })}
       </InfiniteScroll>
     </div>
