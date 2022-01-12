@@ -16,7 +16,9 @@ const FirstArticle = ({ article }) => {
       <div className="right ms-4">
         <h3 className="title">{article.title}</h3>
         <p className="description">{article.description}</p>
-        <button className="btn btn-success">Read more</button>
+        <Link to={`/article/${urlToRedirect}`}>
+          <button className="btn btn-success">Read more</button>
+        </Link>
       </div>
     </div>
   ) : (
