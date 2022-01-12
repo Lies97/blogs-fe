@@ -31,3 +31,8 @@ code {
 .ui.modal {
   width: 500px !important;
 }
+
+.btn-primary {
+  background: #084298 !important;
+  border-color: #084298 !important;
+}

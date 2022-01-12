@@ -1,5 +1,5 @@
 import React from 'react';
-import './card.scss';
+import './Card.scss';
 import { Card, Icon, Image } from 'semantic-ui-react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -24,7 +24,7 @@ const CardItem = (item) => {
       </Card.Content>
       <Card.Content extra className="d-flex justify-content-end">
         <Link to={`/article/${urlToRedirect}`}>
-          <button className="btn btn-success">
+          <button className="btn btn-primary">
             <span>Go To Post</span> <Icon name="arrow right" />
           </button>
         </Link>

@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './styles.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchArticles } from '../../redux/actions/articles';
-import Card from './components/card';
+import Card from './components/Card';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import FirstArticle from './components/FirstArticle';
 
 const Articles = () => {
   const articles = useSelector((state) => state.articlesReducer.articles);
-  const url = 'https://www.theguardian.com/uk';
 
   const dispatch = useDispatch();
 
@@ -21,16 +21,16 @@ const Articles = () => {
     if (articles.length === 0) {
       dispatch(fetchArticles());
     } else {
-      setFirstArray(articles.slice(0, 21));
-      setCloneArray(articles.slice(0, 20));
+      setFirstArray(articles.slice(1, 21));
+      setCloneArray(articles.slice(1, 20));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (articles && articles.length > 0) {
-      setFirstArray(articles.slice(0, 21));
-      setCloneArray(articles.slice(0, 20));
+      setFirstArray(articles.slice(1, 21));
+      setCloneArray(articles.slice(1, 20));
     }
   }, [articles]);
 
@@ -53,14 +53,7 @@ const Articles = () => {
 
   return (
     <div className="articles container">
-      <h2 className="mt-3 text-center">
-        This App crawls Contents from{' '}
-        <strong>
-          <a href={url} target="_blank" rel="noreferrer">
-            {url}
-          </a>
-        </strong>
-      </h2>
+      <FirstArticle article={articles[0]}/>
       <InfiniteScroll
         dataLength={totalItems}
         next={scrollIntoView}
