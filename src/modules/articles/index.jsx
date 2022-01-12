@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './styles.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchArticles } from '../../redux/actions/articles';
-import Card from './components/Card';
+import Card from './components/Card.jsx';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import FirstArticle from './components/FirstArticle';
 
