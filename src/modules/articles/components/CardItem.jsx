@@ -1,5 +1,5 @@
 import React from 'react';
-import './Card.scss';
+import './CardItem.scss';
 import { Card, Icon, Image } from 'semantic-ui-react';
 import { Link, useNavigate } from 'react-router-dom';
 
